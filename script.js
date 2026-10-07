@@ -1,6 +1,6 @@
 /**
- * AMARA PUTRI SONIAJI - PORTFOLIO INTERACTIVITY SCRIPT
- * Features: Active Nav Observer, Mobile Menu, Project Detail Modal, SVG Image Fallback
+ * AMARA PUTRI SONIAJI - DIGITAL PRODUCT ANALYST & BUSINESS ANALYSIS PORTFOLIO
+ * Features: Active Nav Observer, Mobile Menu, Project Detail Modal, Lightbox Preview, Image Fallback
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       siteNav.classList.toggle('open');
     });
 
-    // Close menu when clicking a nav link
     const navLinks = siteNav.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --------------------------------------------------------------------------
      3. IMAGE FALLBACK SYSTEM
-     Replaces broken or missing image links with structured SVG Placeholders
      -------------------------------------------------------------------------- */
   const projectImages = document.querySelectorAll('.project-img');
 
@@ -64,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const caption = this.getAttribute('data-caption') || 'Visual Evidence';
       const wrapper = this.parentElement;
 
-      // Replace wrapper content with clean SVG placeholder
       wrapper.innerHTML = `
         <div class="image-fallback-placeholder">
           <svg class="fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -84,62 +81,207 @@ document.addEventListener('DOMContentLoaded', () => {
      4. PROJECT DETAIL MODAL DATA & CONTROLLER
      -------------------------------------------------------------------------- */
   const projectData = {
-    'project-1': {
+    'project-sipraker': {
+      title: 'SIPRAKER — Internship Attendance System',
+      subtitle: 'Business Process Analysis · Requirements · System Implementation · Testing',
+      category: 'Digital Solution & Business Process Analysis',
+      year: '2026',
+      role: 'Business Process & System Analysis | Developer',
+      organization: 'PT PLN Indonesia Power UBP Semarang',
+      sections: [
+        {
+          num: '01',
+          title: 'Context',
+          content: 'SIPRAKER is an internal internship attendance system developed for PT PLN Indonesia Power UBP Semarang to replace a manual, paper-based attendance and leave tracking process.'
+        },
+        {
+          num: '02',
+          title: 'Problem & Objective',
+          content: 'The existing attendance process relied on physical attendance sheets and informal leave coordination. Humas administrators spent considerable manual effort recording daily entries, reconciling attendance summaries at the end of each cohort, and verifying completion certificates. The objective was to design and implement a centralized digital workflow.'
+        },
+        {
+          num: '03',
+          title: 'My Role & Responsibilities',
+          content: 'Engaged directly with Humas administrators to analyze existing workflows and gather user needs. Modeled AS-IS and TO-BE business processes in BPMN 2.0 using Bizagi Modeler, translated process pain points into functional requirements, designed the database schema, developed the web application, and executed functional test verification.'
+        },
+        {
+          num: '04',
+          title: 'Process Analysis (AS-IS)',
+          content: 'Mapped the manual attendance journey from initial participant arrival through monthly review and certificate issuance. Identified key bottlenecks: delayed status visibility, manual arithmetic recap errors, and lack of real-time validation.'
+        },
+        {
+          num: '05',
+          title: 'Requirements & Scope',
+          list: [
+            'Attendance Recording: Secure participant check-in with automatic timestamping.',
+            'Leave Submission: Digital leave form with attachment support and structured admin approval status.',
+            'Admin Dashboard: Real-time oversight of daily attendance numbers and participant status.',
+            'Automated Recap: Instant cohort-based attendance calculation and reporting export.',
+            'Public QR Verification: Secure public verification endpoint for official completion certificates.'
+          ]
+        },
+        {
+          num: '06',
+          title: 'Solution & TO-BE Workflow',
+          content: 'Implemented the TO-BE workflow where participants log attendance directly via the web portal, while administrators monitor data and approve leave requests in real time. Built using Laravel 12, PHP, MySQL, Blade, and Tailwind CSS.'
+        },
+        {
+          num: '07',
+          title: 'Testing & Verification',
+          content: 'Conducted functional testing across all user paths (participant check-in, invalid date handling, admin approval toggles, recap calculations, and public QR scans) to ensure compliance with the defined requirements and expected workflows.'
+        },
+        {
+          num: '08',
+          title: 'Outcome & Impact',
+          content: 'Delivered an operational, centralized attendance management system that eliminated paper logs, reduced administrative verification time, and established an auditable digital trail for internship cohorts.'
+        }
+      ],
+      tools: ['BPMN 2.0', 'Bizagi Modeler', 'Requirements Engineering', 'Laravel 12', 'PHP', 'MySQL', 'Functional Testing']
+    },
+
+    'project-specflow': {
+      title: 'SpecFlow AI — AI-Assisted Requirements & Impact Analysis',
+      subtitle: 'IT Business Analysis · Product Requirements · Solution Design',
+      category: 'IT Business Analysis & Product Requirements',
+      year: '2026',
+      role: 'IT Business Analyst (Refactory Hackathon x Telkom University)',
+      achievement: '🏆 3rd Place – Rising Innovator',
+      sections: [
+        {
+          num: '01',
+          title: 'Context',
+          content: 'SpecFlow AI was a hackathon product concept developed during the Refactory Hackathon x Telkom University, awarded 3rd Place – Rising Innovator.'
+        },
+        {
+          num: '02',
+          title: 'Problem & Objective',
+          content: 'When business requirements unexpectedly shift during agile software development, teams often struggle to quickly identify the technical dependencies, database schemas, and API contracts affected. The objective was to design an AI-powered requirements assistant that parses natural language requirements and maps architectural impacts.'
+        },
+        {
+          num: '03',
+          title: 'My Role & Responsibilities',
+          content: 'Served as the IT Business Analyst responsible for product scope formulation, user stories, acceptance criteria, Product Requirements Document (PRD), and C4 Context architecture mapping.'
+        },
+        {
+          num: '04',
+          title: 'User Story & Need Analysis',
+          quote: '“As a Project Manager, I want to instantly generate an automated technical impact analysis when business requirements unexpectedly change, so that the engineering team can avoid manually tracing architectural impacts and reduce the risk of project delays.”',
+          content: 'Identified the core workflow disconnect between non-technical project managers defining requirements and technical engineers tracing architectural dependencies.'
+        },
+        {
+          num: '05',
+          title: 'Requirements & PRD Structure',
+          list: [
+            'FR-01: Natural language requirement ingestion and entity extraction.',
+            'FR-02: Impact analysis engine correlating changed user stories with codebase metadata.',
+            'FR-03: Visual dependency mapping and automated change summary report generation.'
+          ]
+        },
+        {
+          num: '06',
+          title: 'Solution Concept & C4 Architecture',
+          content: 'Modeled the C4 Level 1 System Context Diagram defining interactions between Project Managers, the SpecFlow AI engine, third-party LLM providers, and engineering repository services.'
+        },
+        {
+          num: '07',
+          title: 'Outcome & Validation',
+          content: 'Delivered a complete PRD, user story backlog, and architectural concept that was pitched to hackathon judges, winning 3rd Place – Rising Innovator.'
+        }
+      ],
+      tools: ['PRD Writing', 'User Stories & Acceptance Criteria', 'C4 Architecture Model', 'Requirements Engineering', 'Figma']
+    },
+
+    'project-automation': {
+      title: 'Process Automation — From Manual Workflow to Digital Process',
+      subtitle: 'Process Improvement · Workflow Analysis · Digital Automation',
+      category: 'Process Improvement & Digital Automation',
+      year: '2025',
+      role: 'Process Improvement & Automation Contributor',
+      achievement: 'Official Copyright (HKI) Protected',
+      sections: [
+        {
+          num: '01',
+          title: 'Context',
+          content: 'Reviewed an existing administrative workflow to identify manual redundancies, eliminate operational friction, and support the development of a cloud automation solution.'
+        },
+        {
+          num: '02',
+          title: 'Problem & Objective',
+          content: 'Administrative personnel previously handled recurring submissions through manual copy-pasting, physical tracking sheets, and manual email notifications. This created processing delays and increased risk of data entry inconsistencies.'
+        },
+        {
+          num: '03',
+          title: 'My Role & Responsibilities',
+          content: 'Analyzed the manual administrative workflow, pinpointed repetitive bottlenecks suitable for automation, formulated flow logic and trigger criteria, supported the implementation in Microsoft Power Automate, and validated flow execution.'
+        },
+        {
+          num: '04',
+          title: 'Workflow Analysis & Opportunity',
+          content: 'Decomposed the end-to-end task cycle to identify rules-based activities: automated submission detection, data extraction, centralized record synchronization, and condition-based email dispatch.'
+        },
+        {
+          num: '05',
+          title: 'Automated Solution Implementation',
+          list: [
+            'Automated Cloud Trigger: Listens for incoming digital form submissions.',
+            'Data Parsing & Sync: Automatically parses input attributes and logs them into structured records.',
+            'Notification & Approval Routing: Triggers automated notification emails and routing alerts to relevant personnel.',
+            'Audit Logging: Maintains an automated timestamped audit trail of all processed items.'
+          ]
+        },
+        {
+          num: '06',
+          title: 'Outcome & Impact',
+          content: 'Eliminated manual copy-paste overhead, shortened turnaround time for administrative updates, and secured official intellectual property (HKI) copyright recognition.'
+        }
+      ],
+      tools: ['Microsoft Power Automate', 'Workflow Analysis', 'Process Improvement', 'Process Documentation']
+    },
+
+    'project-bpmn': {
       title: 'Faculty Business Process Mapping',
-      category: 'Research Project · Business Process Analysis · BPMN',
+      subtitle: 'Business Process Analysis · BPMN · Process Architecture',
+      category: 'Business Process Analysis & BPMN',
       year: '2024',
       role: 'Business Process Analyst / BPMN Modelling Contributor',
-      context: 'Conducted in 2024 as an academic research project requested by a lecturer at Diponegoro University. The goal was to map, standardize, and structure operational workflows across all faculty divisions.',
-      deliverables: [
-        'BPMN Level 0 High-Level Faculty Process Map',
-        'BPMN Level 1 SOP Process Breakdown across 4 primary process groups',
-        'BPMN Level 2 Detailed Process Workflows in Sparx EA / Bizagi',
-        'Stakeholder Matrix (Students, Lecturers, Administrative Staff)',
-        'Process Documentation & Simulation Logs'
+      organization: 'Diponegoro University',
+      sections: [
+        {
+          num: '01',
+          title: 'Context',
+          content: 'A faculty-wide business process mapping project conducted as an academic research project requested by a lecturer at Diponegoro University.'
+        },
+        {
+          num: '02',
+          title: 'Problem & Objective',
+          content: 'The faculty required a standardized, visual, and hierarchical documentation of its operational processes across multiple divisions to ensure SOP alignment, clarify administrative responsibilities, and support institutional accreditation.'
+        },
+        {
+          num: '03',
+          title: 'My Role & Responsibilities',
+          content: 'Reviewed faculty standard operating procedure documents, mapped organizational process hierarchies across three structured levels, identified multi-stakeholder roles, and authored standardized BPMN 2.0 diagrams.'
+        },
+        {
+          num: '04',
+          title: 'Process Hierarchy Architecture',
+          list: [
+            'Level 0 (Process Landscape): High-level overview of core faculty operational domains (Academic & Student Affairs, Resource Management, Department Administration).',
+            'Level 1 (Process Groups): Decomposition of main functional areas into individual Standard Operating Procedures (SOPs).',
+            'Level 2 (Detailed Workflow): Granular BPMN 2.0 workflows illustrating activity sequences, gateways, decision points, and stakeholder swimlanes.'
+          ]
+        },
+        {
+          num: '05',
+          title: 'Artifacts & Stakeholder Alignment',
+          content: 'Produced comprehensive BPMN models visualizing interactions between students, lecturers, academic heads, and administrative staff using Sparx Systems Enterprise Architect and Bizagi Modeler.'
+        },
+        {
+          num: '06',
+          title: 'Outcome & Value Delivered',
+          content: 'Standardized process documentation across the faculty, eliminated ambiguity regarding SOP ownership, and established a modular process framework for continuous operational review.'
+        }
       ],
-      methodology: 'Analysed existing Standard Operating Procedures (SOPs), grouped operational functions into high-level categories (Department Management, Academic & Student Affairs, Resource Management, Administration), and modeled full process hierarchies from macro Level 0 down to execution Level 2.',
-      tools: ['Sparx Systems Enterprise Architect (EA)', 'Bizagi Modeler', 'BPMN 2.0 Standard', 'SOP Analysis']
-    },
-    'project-2': {
-      title: 'SpecFlow AI – Hackathon Product Concept',
-      category: 'Requirements Analysis · Product Documentation · C4 Context Diagram',
-      year: '2026',
-      role: 'IT Business Analyst (Refactory x Telkom University Hackathon)',
-      achievement: '🏆 3rd Place – Rising Innovator Award',
-      context: 'Developed during the Refactory x Telkom University Hackathon in May 2026. Served as the IT Business Analyst responsible for defining the product scope, structuring user stories, preparing the PRD, and illustrating system relationships using the C4 Model.',
-      featuredUserStory: '“As a Project Manager, I want to instantly generate an automated technical impact analysis when business requirements unexpectedly change, so that the engineering team can avoid manually tracing architectural impacts and reduce the risk of project delays.”',
-      deliverables: [
-        'Product Requirements Document (PRD)',
-        'C4 Architecture Context Diagram',
-        'User Story Backlog & Acceptance Criteria',
-        'Judge Presentation Deck & Value Proposition'
-      ],
-      methodology: 'Identified key friction points in agile software development when requirements shift rapidly. Structured functional requirements and mapped software boundary interactions using C4 Context level diagrams to align business managers and technical engineers.',
-      tools: ['C4 Architecture Model', 'PRD Structuring', 'User Story Writing', 'Figma', 'Presentation Design']
-    },
-    'project-3': {
-      title: 'SIPRAKER – Internship Attendance System',
-      category: 'Business Process Analysis · Requirements Documentation · System Implementation',
-      year: '2026',
-      role: 'Solo Developer / Business Process and System Analysis Contributor',
-      organization: 'PT PLN Indonesia Power UBP Semarang (Jan 2026)',
-      context: 'Developed during a one-month IT internship at PT PLN Indonesia Power UBP Semarang to digitize manual internship attendance and leave tracking workflows.',
-      supportedFeatures: [
-        'Attendance recording with timestamping',
-        'Leave submission & approval workflow',
-        'Humas Admin dashboard for participant oversight',
-        'Automated attendance recap generation',
-        'Public QR code verification for official certificates'
-      ],
-      deliverables: [
-        'AS-IS and TO-BE Workflow Comparison Maps',
-        'BPMN Process Diagrams in Bizagi Modeler',
-        'Functional Database Schema & Entity Relationship Model',
-        'Working Web System Implementation in Laravel 12',
-        'System User & Functional Documentation'
-      ],
-      methodology: 'Engaged directly with Humas administrators to conduct requirement gathering interviews. Modeled AS-IS manual workflows, designed TO-BE automated process flows in Bizagi, designed the MySQL database schema, and implemented the functional web application.',
-      tools: ['Laravel 12', 'PHP', 'MySQL', 'Bizagi Modeler', 'BPMN 2.0', 'Functional Testing']
+      tools: ['BPMN 2.0', 'Sparx Systems Enterprise Architect', 'Bizagi Modeler', 'Process Decomposition', 'SOP Analysis']
     }
   };
 
@@ -158,64 +300,52 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="project-category">${data.category}</span>
       </div>
       <h2 class="modal-title" id="modalTitle">${data.title}</h2>
+      <p class="modal-subtitle-text" style="color:var(--text-secondary); margin-top:-1rem; margin-bottom:1.2rem; font-weight:500;">${data.subtitle || ''}</p>
       
-      ${data.achievement ? `<div class="award-badge" style="display:inline-block; margin-bottom:1.2rem;">${data.achievement}</div>` : ''}
+      ${data.achievement ? `<div class="award-badge" style="display:inline-block; margin-bottom:1.4rem;">${data.achievement}</div>` : ''}
       
-      <div class="modal-section">
-        <h4 class="modal-section-title">My Role & Context</h4>
-        <p><strong>Role:</strong> ${data.role}</p>
-        ${data.organization ? `<p><strong>Organization:</strong> ${data.organization}</p>` : ''}
-        <p>${data.context}</p>
+      <div class="modal-section role-badge-box" style="background:var(--bg-subtle); padding:1rem 1.2rem; border-radius:var(--radius-md); border:1px solid var(--border-color); margin-bottom:1.8rem;">
+        <p style="margin-bottom:0.2rem;"><strong>Role:</strong> ${data.role}</p>
+        ${data.organization ? `<p style="margin-bottom:0; color:var(--text-muted); font-size:0.9rem;"><strong>Organization:</strong> ${data.organization}</p>` : ''}
       </div>
     `;
 
-    if (data.featuredUserStory) {
+    if (data.sections && data.sections.length > 0) {
+      data.sections.forEach(sec => {
+        htmlContent += `
+          <div class="modal-section">
+            <h4 class="modal-section-title"><span style="color:var(--accent-blue); opacity:0.8; margin-right:0.4rem;">${sec.num}</span> ${sec.title}</h4>
+            ${sec.content ? `<p>${sec.content}</p>` : ''}
+            ${sec.quote ? `
+              <div class="user-story-card" style="margin: 0.8rem 0;">
+                <blockquote class="user-story-text" style="font-size:0.95rem;">${sec.quote}</blockquote>
+              </div>
+            ` : ''}
+            ${sec.list ? `
+              <ul class="bullet-list" style="margin-top:0.4rem;">
+                ${sec.list.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            ` : ''}
+          </div>
+        `;
+      });
+    }
+
+    if (data.tools && data.tools.length > 0) {
       htmlContent += `
-        <div class="modal-section">
-          <h4 class="modal-section-title">Featured User Story</h4>
-          <div class="user-story-card" style="margin-top:0.5rem;">
-            <blockquote class="user-story-text">${data.featuredUserStory}</blockquote>
+        <div class="modal-section" style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color);">
+          <h4 class="modal-section-title">Tools & Competencies Applied</h4>
+          <div class="tech-pill-container" style="margin-top:0.6rem;">
+            ${data.tools.map(tool => `<span class="tech-pill">${tool}</span>`).join('')}
           </div>
         </div>
       `;
     }
 
-    if (data.supportedFeatures) {
-      htmlContent += `
-        <div class="modal-section">
-          <h4 class="modal-section-title">Supported System Features</h4>
-          <ul class="bullet-list">
-            ${data.supportedFeatures.map(feat => `<li>${feat}</li>`).join('')}
-          </ul>
-        </div>
-      `;
-    }
-
-    htmlContent += `
-      <div class="modal-section">
-        <h4 class="modal-section-title">Approach & Methodology</h4>
-        <p>${data.methodology}</p>
-      </div>
-
-      <div class="modal-section">
-        <h4 class="modal-section-title">Key Deliverables</h4>
-        <ul class="bullet-list">
-          ${data.deliverables.map(del => `<li>${del}</li>`).join('')}
-        </ul>
-      </div>
-
-      <div class="modal-section">
-        <h4 class="modal-section-title">Tools & Frameworks</h4>
-        <div class="tech-pill-container">
-          ${data.tools.map(tool => `<span class="tech-pill">${tool}</span>`).join('')}
-        </div>
-      </div>
-    `;
-
     modalBody.innerHTML = htmlContent;
     modalOverlay.classList.add('active');
     modalOverlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   }
 
   function closeProjectModal() {
@@ -224,7 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Attach event listeners to detail buttons
   openModalButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       const projectId = e.currentTarget.getAttribute('data-project');
@@ -236,7 +365,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCloseBtn.addEventListener('click', closeProjectModal);
   }
 
-  // Close modal on backdrop click
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
@@ -244,18 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  // Close modal on Escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (modalOverlay && modalOverlay.classList.contains('active')) {
-        closeProjectModal();
-      }
-      if (lightboxOverlay && lightboxOverlay.classList.contains('active')) {
-        closeLightboxModal();
-      }
-    }
-  });
 
   /* --------------------------------------------------------------------------
      5. IMAGE LIGHTBOX PREVIEW CONTROLLER
@@ -288,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   galleryItems.forEach(item => {
     item.addEventListener('click', (e) => {
-      // Prevent trigger if clicking an explicit inner action link if any
       if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
 
       const imgEl = item.querySelector('.project-img');
@@ -317,5 +432,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-});
+  // Close modals on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (modalOverlay && modalOverlay.classList.contains('active')) {
+        closeProjectModal();
+      }
+      if (lightboxOverlay && lightboxOverlay.classList.contains('active')) {
+        closeLightboxModal();
+      }
+    }
+  });
 
+});
