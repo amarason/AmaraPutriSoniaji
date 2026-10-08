@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxDescription = document.getElementById('lightboxDescription');
-  const previewCards = document.querySelectorAll('.gallery-preview-card');
+  const previewCards = document.querySelectorAll('.gallery-preview-card, .cert-showcase-card[data-lightbox-src]');
 
   function openLightbox(src, title, desc) {
     if (!lightboxOverlay || !lightboxImg) return;
