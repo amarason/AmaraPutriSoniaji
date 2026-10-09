@@ -1743,6 +1743,11 @@ ul {
   border-radius: 50%;
 }
 
+.skill-item-list strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* --------------------------------------------------------------------------
    12. ACHIEVEMENTS & CERTIFICATIONS SECTION (VISUAL GALLERY SHOWCASE)
    -------------------------------------------------------------------------- */
